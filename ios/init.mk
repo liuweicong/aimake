@@ -48,7 +48,7 @@ NM_DEV      = $(DEVROOT_DEV)/usr/bin/nm
 RANLIB_DEV  = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib
 
 #CFLAGS_DEV  = -std=gnu99 -no-cpp-precomp -isysroot $(SDKROOT_DEV) -I$(SDKROOT_DEV)/usr/include -D__IPHONE_OS__
-CFLAGS_DEV  = -no-cpp-precomp -isysroot $(SDKROOT_DEV) -I$(SDKROOT_DEV)/usr/include -D__IPHONE_OS__ -miphoneos-version-min=4.0 -fembed-bitcode-marker
+CFLAGS_DEV  = -no-cpp-precomp -isysroot $(SDKROOT_DEV) -I$(SDKROOT_DEV)/usr/include -D__IPHONE_OS__ -miphoneos-version-min=4.0 -fembed-bitcode-marker -fobjc-arc
 LDFLAGS_DEV = -L$(SDKROOT_DEV)/usr/lib -lstdc++
 
 CFLAGS_ARMV7 = -arch armv7 $(CFLAGS_ARMV7_OPTIMIZE) $(CFLAGS_DEV)
@@ -70,7 +70,7 @@ NM_SIM      = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault
 #CXXCPP_SIM  = $(DEVROOT_SIM)/usr/bin/cpp
 RANLIB_SIM  = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib #$(DEVROOT_SIM)/usr/bin/ranlib
 
-CFLAGS_SIM  := -no-cpp-precomp -isysroot $(SDKROOT_SIM) -I$(SDKROOT_SIM)/usr/include  -D__IPHONE_OS__ -miphoneos-version-min=4.0 -fembed-bitcode-marker
+CFLAGS_SIM  := -no-cpp-precomp -isysroot $(SDKROOT_SIM) -I$(SDKROOT_SIM)/usr/include  -D__IPHONE_OS__ -miphoneos-version-min=4.0 -fembed-bitcode-marker -fobjc-arc
 LDFLAGS_SIM := -L$(SDKROOT_SIM)/usr/lib -lstdc++
 
 CFLAGS_I386   := -arch i386 $(CFLAGS_SIM)
